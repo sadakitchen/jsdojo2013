@@ -1,5 +1,10 @@
 describe("mainController", function () {
-    it("..", function () {
-        expect(1).toBe(1);
+    it('should create "phones" model with 3 phones', function() {
+        var scope = {},
+            ctrl = new mainCtrl(scope);
+ 
+        scope.questionMsg = "3";
+        scope.onClick("Fizz")
+        expect(scope.resultMsg).toBe("◯");
     });
 });

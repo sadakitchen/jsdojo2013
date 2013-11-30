@@ -4,6 +4,7 @@ module.exports = function (config) {
         basePath: '../',
         files: [
             'js/angular.min.js',
+            'js/jquery-1.10.1.min.js',
             'js/app.js',
             'test/mainControllerTest.js'
         ],
