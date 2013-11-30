@@ -4,6 +4,7 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+@import "compass/utilities/general/clearfix";
 
 /* styles */
 
@@ -25,9 +26,11 @@ body {
 }
 ul {
 	width:604px;
-	margin: 0 auto;
+	margin: 0 auto 30px;
 	padding:0;
+	@include clearfix;
 	border-radius: 10px;
+
 	li {
 		cursor: pointer;
 		margin:0;
@@ -58,4 +61,18 @@ ul {
 	display: block;
 	background: rgba( 255,255,255,0.75);
 	display: none;
+}
+.history {
+	border: 1px solid #ccc;
+	font-size: 32px;
+	margin: 30px auto;
+	clear: both;
+
+	th,td {
+		padding: 4px 10px;
+		border-right: 1px solid #ccc;
+	}
+	th {
+		border-bottom: 1px solid #ccc;
+	}
 }
