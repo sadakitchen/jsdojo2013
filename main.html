@@ -7,15 +7,72 @@
 </head>
 <body>
   <div ng-controller="mainCtrl">
-    <p id="Question">？</p>
+    <p id="Question">{{questionMsg}}</p>
     <div id="Answer">
       <ul>
-        <li id="Fizz">Fizz</li>
-        <li id="Buzz">Buzz</li>
-        <li id="FizzBuzz">FizzBuzz</li>
-        <li id="Other">Other</li>
+        <li id="Fizz" ng-click="onClick('Fizz')">Fizz</li>
+        <li id="Buzz" ng-click="onClick('Buzz')">Buzz</li>
+        <li id="FizzBuzz" ng-click="onClick('FizzBuzz')">FizzBuzz</li>
+        <li id="Other" ng-click="onClick('Other')">Other</li>
       </ul>
     </div>
+    <div class="result">{{resultMsg}}</div>
   </div>
+<script>
+var mainCtrl = function($scope){
+  // 変数
+  $scope.questionMsg = "3";
+  $scope.resultMsg = "×";
+
+  // 関数
+  $scope.onClick = function( _ans ){
+
+    var _isCorrect = false;
+
+    _isCorrect = checkFizzBuzz($scope.questionMsg, _ans);
+    
+    if(_isCorrect === true){
+      $scope.resultMsg = "◯";
+    } else {
+      $scope.resultMsg = "×";
+    }
+    // $scope.resultMsg = "◯";
+  }
+
+  // private 
+  // @return 
+  function checkFizzBuzz(_question_num, _user_answer){
+    // 問題の数値をFizz|
+    var _isFizz = false;
+    var _isBuzz = false;
+    var _result = false;
+
+    if( parseInt(_question_num, 10) % 3 === 0){
+      _isFizz = true;
+    }
+    if( parseInt(_question_num, 10) % 5 === 0){
+      _isBuzz = true;
+    }
+
+    // ユーザーの答え分岐
+    switch(_user_answer){
+      case 'FizzBuzz':
+        if(_isFizz && _isBuzz) _result = true;
+        break;
+      case 'Fizz':
+        if(_isFizz && !_isBuzz) _result = true;
+        break;
+      case 'Buzz':
+        if(!_isFizz && _isBuzz) _result = true;
+        break;
+      case 'Other':
+        if(!_isFizz && !_isBuzz) _result = true;
+        break;
+    }
+
+    return _result;
+  }
+}
+</script>
 </body>
 </html>
