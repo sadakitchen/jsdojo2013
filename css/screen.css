@@ -80,21 +80,21 @@ body {
   font-weight: bold;
   line-height: 1;
   border: 1px solid #cccccc;
-  display: block;
-  width: 200px;
+  display: inline-block;
+  padding: 0 10px;
   margin: 20px auto;
   user-select: none;
   border-radius: 20px;
 }
 
-/* line 25, ../_scss/screen.scss */
+/* line 26, ../_scss/screen.scss */
 ul {
   width: 604px;
   margin: 0 auto;
   padding: 0;
   border-radius: 10px;
 }
-/* line 30, ../_scss/screen.scss */
+/* line 31, ../_scss/screen.scss */
 ul li {
   cursor: pointer;
   margin: 0;
@@ -105,12 +105,12 @@ ul li {
   float: left;
   list-style: none;
 }
-/* line 40, ../_scss/screen.scss */
+/* line 41, ../_scss/screen.scss */
 ul li:hover {
   background-color: #fcc;
 }
 
-/* line 45, ../_scss/screen.scss */
+/* line 46, ../_scss/screen.scss */
 .result {
   position: absolute;
   left: 50%;

@@ -1,11 +1,13 @@
 var mainCtrl = function($scope){
   // 変数
-  $scope.questionMsg = "3";
+  var _ram = Math.random()*1000;
+  _ram = (_ram|0);  // Chromeで一番はやい小数点切り捨て
+  $scope.questionMsg = _ram;
   $scope.resultMsg = "";
 
   // 関数
   $scope.onClick = function( _ans ){
-    
+
     var _isCorrect = false;
 
     _isCorrect = checkFizzBuzz($scope.questionMsg, _ans);

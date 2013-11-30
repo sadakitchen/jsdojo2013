@@ -16,8 +16,9 @@ body {
 	font-weight: bold;
 	line-height: 1;
 	border: 1px solid #ccc;
-	display: block;
-	width:200px;
+	display: inline-block;
+	padding: 0 10px;
+	// width:200px;
 	margin: 20px auto;
 	user-select: none;
 	border-radius: 20px;
