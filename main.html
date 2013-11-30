@@ -26,10 +26,10 @@
         <th>あなたの回答</th>
         <th>正否</th>
       </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
+      <tr ng-repeat="log in logs">
+        <td>{{log.question}}</td>
+        <td>{{log.answer}}</td>
+        <td>{{log.result}}</td>
       </tr>
     </table>
     <!-- <ul class="history">{{history}}</ul> -->

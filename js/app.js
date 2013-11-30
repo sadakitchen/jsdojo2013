@@ -5,6 +5,12 @@ var mainCtrl = function($scope){
   $scope.questionMsg = ramGene();
   $scope.resultMsg = "";
 
+  // $scope.logQuestion = "まる";
+  // $scope.logAnswer = "まる";
+  // $scope.logResult = "まる";
+
+  $scope.logs = [];
+
   // 関数
   $scope.onClick = function( _ans ){
 
@@ -18,6 +24,9 @@ var mainCtrl = function($scope){
       $scope.resultMsg = "✕";
     }
     // $scope.resultMsg = "◯";
+
+    // 履歴に追加
+    $scope.logs.unshift({question:$scope.questionMsg,answer:_ans,result:$scope.resultMsg});
 
     //    問題リセット
     $scope.questionMsg = ramGene();
