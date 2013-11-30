@@ -1,0 +1,20 @@
+{
+  "name": "jsdojo2013",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "test": "node_modules\\.bin\\karma start config\\karma.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/iakio/jsdojo2013.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/iakio/jsdojo2013/issues"
+  },
+  "devDependencies": {
+    "karma": "~0.10.6"
+  }
+}
