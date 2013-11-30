@@ -9,30 +9,36 @@
 </head>
 <body>
   <div ng-controller="mainCtrl">
-    <p id="Question">{{questionMsg}}</p>
-    <div id="Answer">
-      <ul>
-        <li id="Fizz" ng-click="onClick('Fizz')">Fizz</li>
-        <li id="Buzz" ng-click="onClick('Buzz')">Buzz</li>
-        <li id="FizzBuzz" ng-click="onClick('FizzBuzz')">FizzBuzz</li>
-        <li id="Other" ng-click="onClick('Other')">Other</li>
-      </ul>
-    </div>
-    <div class="result">{{resultMsg}}</div>
+    <div id="StartPanel" ng-click="onStartClick()"><p id="StartBtn">GAME START!</p></div><!-- end StartPanel -->
 
-    <table class="history">
-      <tr>
-        <th>出題</th>
-        <th>あなたの回答</th>
-        <th>正否</th>
-      </tr>
-      <tr ng-repeat="log in logs">
-        <td>{{log.question}}</td>
-        <td>{{log.answer}}</td>
-        <td>{{log.result}}</td>
-      </tr>
-    </table>
-    <!-- <ul class="history">{{history}}</ul> -->
+    <div id="GamePanel">
+      <p id="Question">{{questionMsg}}</p>
+      <div id="Answer">
+        <ul>
+          <li id="Fizz" ng-click="onClick('Fizz')">Fizz</li>
+          <li id="Buzz" ng-click="onClick('Buzz')">Buzz</li>
+          <li id="FizzBuzz" ng-click="onClick('FizzBuzz')">FizzBuzz</li>
+          <li id="Other" ng-click="onClick('Other')">Other</li>
+        </ul>
+      </div>
+      <div class="result">{{resultMsg}}</div>
+
+      <table class="history">
+        <tr>
+          <th>出題</th>
+          <th>あなたの回答</th>
+          <th>正否</th>
+        </tr>
+        <tr ng-repeat="log in logs">
+          <td>{{log.question}}</td>
+          <td>{{log.answer}}</td>
+          <td>{{log.result}}</td>
+        </tr>
+      </table>
+      <!-- <ul class="history">{{history}}</ul> -->
+    </div><!-- end GamePanel -->
+
+
   </div>
 </body>
 </html>

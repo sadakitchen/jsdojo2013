@@ -1,9 +1,12 @@
-var mainCtrl = function($scope){
+var mainCtrl = function($scope,$timeout){
   // 変数
   // var _ram = Math.random()*1000;
   // _ram = (_ram|0);  // Chromeで一番はやい小数点切り捨て
-  $scope.questionMsg = ramGene();
+  $scope.questionMsg = "？";
   $scope.resultMsg = "";
+
+  // ゲームプレイ状態
+  $scope.isPlaying = false;
 
   // $scope.logQuestion = "まる";
   // $scope.logAnswer = "まる";
@@ -12,7 +15,32 @@ var mainCtrl = function($scope){
   $scope.logs = [];
 
   // 関数
+  $scope.onStartClick = function() {
+    // $scope.questionMsg = ramGene();
+    // $scope.isPlaying = true;
+    $('#StartPanel').fadeOut(1000, function(){
+      $scope.questionMsg = ramGene();
+      $scope.isPlaying = true;
+
+      // タイマースタート 10秒
+      $timeout(function(){
+
+        $scope.questionMsg = "end";
+        $scope.isPlaying = false;
+        $scope.$apply();
+        
+        alert('結果は'+$scope.logs.length + '問やりました');
+      }, 10000);
+
+      $scope.$apply();
+    });
+  }
+
+
   $scope.onClick = function( _ans ){
+
+    // ゲーム開始でなければ却下
+    if(!$scope.isPlaying) return;
 
     var _isCorrect = false;
 
