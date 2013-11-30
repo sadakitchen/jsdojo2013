@@ -5,7 +5,7 @@ var mainCtrl = function($scope){
 
   // 関数
   $scope.onClick = function( _ans ){
-
+    
     var _isCorrect = false;
 
     _isCorrect = checkFizzBuzz($scope.questionMsg, _ans);
