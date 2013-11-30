@@ -2,6 +2,7 @@
 <html lang="ja" ng-app>
 <head>
 <meta charset="utf-8">
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script src="js/angular.min.js"></script>
 <link href="css/screen.css" media="all" rel="stylesheet" type="text/css" />
 </head>
@@ -22,7 +23,7 @@
 var mainCtrl = function($scope){
   // 変数
   $scope.questionMsg = "3";
-  $scope.resultMsg = "×";
+  $scope.resultMsg = "";
 
   // 関数
   $scope.onClick = function( _ans ){
@@ -34,9 +35,11 @@ var mainCtrl = function($scope){
     if(_isCorrect === true){
       $scope.resultMsg = "◯";
     } else {
-      $scope.resultMsg = "×";
+      $scope.resultMsg = "✕";
     }
     // $scope.resultMsg = "◯";
+    $('.result').show();
+    $('.result').fadeOut();
   }
 
   // private 

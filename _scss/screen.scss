@@ -42,3 +42,19 @@ ul {
 		}
 	}
 }
+.result {
+	position:  absolute;
+	left : 50%;
+	top: 50%;
+	font-size: 400px;
+	margin-left: -200px;
+	margin-top: -200px;
+	text-align: center;
+	width: 400px;
+	height: 400px;
+	line-height: 1;
+	vertical-align: middle;
+	display: block;
+	background: rgba( 255,255,255,0.75);
+	display: none;
+}
