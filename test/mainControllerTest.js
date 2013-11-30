@@ -13,9 +13,22 @@ describe("mainController", function () {
             ctrl = new mainCtrl(scope);
  
         scope.questionMsg = data[0];
-        scope.onClick(data[1])
+        scope.onClick(data[1]);
         expect(scope.resultMsg).toBe(data[2]);
     	});
 		});
-		
+
+		it('履歴に過去の正答が追加されていること : ',function(){
+			var scope = {},
+          ctrl = new mainCtrl(scope);
+      
+      expect(scope.logs.length).toBe(0);
+
+      scope.questionMsg = '3';
+      scope.onClick('Fizz');
+
+      expect(scope.logs[0].question).toBe('3');
+
+		});
+
 });
