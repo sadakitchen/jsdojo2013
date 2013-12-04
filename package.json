@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "test": "node_modules/.bin/karma start config/karma.config.js"
+    "test": "karma start config/karma.config.js --single-run --browsers PhantomJS"
   },
   "repository": {
     "type": "git",
